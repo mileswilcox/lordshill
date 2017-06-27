@@ -1,0 +1,233 @@
+
+	// --------------------------------------------------------------------------- //
+	// ----------------------- MEDIA QUERIES ------------------------------------- //
+	// --------------------------------------------------------------------------- //
+
+	@mixin mq($viewports, $constraint1: max, $constraint2: width) {
+
+		// Set default variables
+		$min: min-#{$constraint2};
+		$max: max-#{$constraint2};
+
+		@if(type-of($viewports) == number) {
+			@media screen and (#{$constraint1}-#{$constraint2}: $viewports) {
+				@content;
+			}
+		} @else {
+			@media screen and ($min: nth($viewports, 1)) and ($max: nth($viewports, 2)) {
+				@content;
+			}
+		}
+
+	}
+
+	// --------------------------------------------------------------------------- //
+	// ------------------------------- FONTS ------------------------------------- //
+	// --------------------------------------------------------------------------- //
+
+
+	@mixin fonticon {
+		font-family: $fonticon;
+		speak: none;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		line-height: 1 ;
+	}
+
+
+	// px to rem for font-sizes and line-height
+	@mixin font-size($sizeValue: 1.6, $line: $sizeValue * 1.25){
+		font-size: ($sizeValue * 1) + px;
+		line-height: ($line * 1) + px;
+		font-size: ($sizeValue / 10) + rem;
+		line-height: ($line / 10) + rem;
+	}
+
+	// Clearfix
+	@mixin clearfix {
+
+		&:before,
+		&:after {
+			content: " ";
+			display: table;
+		}
+
+		&:after {
+			clear:both;
+		}
+
+		& {
+			*zoom:1;
+		}
+	}
+
+
+
+	// ------------------------------------------------------------------------------------- //
+	// ------------------------------- GLOBAL VENDOR PREFIX -------------------------------- //
+	// ------------------------------------------------------------------------------------- //
+
+
+	/*
+		Usage: @include prefixer(border-radius, $radii, webkit ms spec);
+	*/
+
+	$prefix-for-webkit:    true !default;
+	$prefix-for-mozilla:   true !default;
+	$prefix-for-microsoft: true !default;
+	$prefix-for-opera:     true !default;
+	$prefix-for-spec:      true !default; // required for keyframe mixin
+
+	@mixin prefixer ($property, $value, $prefixes) {
+
+		@each $prefix in $prefixes {
+
+			@if $prefix == webkit and $prefix-for-webkit == true {
+				-webkit-#{$property}: $value;
+			}
+			@else if $prefix == moz and $prefix-for-mozilla == true {
+				-moz-#{$property}: $value;
+			}
+			@else if $prefix == ms and $prefix-for-microsoft == true {
+				-ms-#{$property}: $value;
+			}
+			@else if $prefix == o and $prefix-for-opera == true {
+				-o-#{$property}: $value;
+			}
+			@else if $prefix == spec and $prefix-for-spec == true {
+				#{$property}: $value;
+			} @else  {
+				@warn "Unrecognized prefix: #{$prefix}";
+			}
+
+		}
+
+	}
+
+	@mixin transition ($properties...) {
+
+		@if length($properties) >= 1 {
+			@include prefixer(transition, $properties, webkit moz ms o spec);
+		} @else {
+			$properties: all 0.15s ease-out 0;
+			@include prefixer(transition, $properties, webkit moz ms o spec);
+		}
+
+	}
+
+	@mixin box-sizing ($box) {
+		//  content-box | border-box | inherit
+		@include prefixer(box-sizing, $box, webkit moz spec);
+	}
+
+
+	@mixin transform($property: none) {
+		//  none | <transform-function>
+		@include prefixer(transform, $property, webkit moz ms o spec);
+	}
+
+	@mixin transform-origin($axes: 50%) {
+		// x-axis - left | center | right  | length | %
+		// y-axis - top  | center | bottom | length | %
+		// z-axis -                          length
+		@include prefixer(transform-origin, $axes, webkit moz ms o spec);
+	}
+
+
+
+	// ------------------------------------------------------------------------------------ //
+	// ------------------------------- COLOUR RELATED MIXINS ------------------------------ //
+	// ------------------------------------------------------------------------------------ //
+	// RGBA Mixin with fallback
+	@mixin rgba($attribute, $color, $background) {
+		$percent: alpha($color) * 100%;
+		$opaque: opacify($color, 1);
+		$solid-color: mix($opaque, $background, $percent);
+		#{$attribute}: $solid-color;
+		#{$attribute}: $color;
+	}
+	// usage:
+	// @include rgba('background-color', rgba(#000, 0.5), #000);
+
+
+
+
+	// -------------------------------------------------------------------------------------- //
+	// ------------------------------- FORM RELATED MIXINS ---------------------------------- //
+	// -------------------------------------------------------------------------------------- //
+
+	// Placeholder Input Styles
+	@mixin placeholder {
+		&.placeholder { @content };
+		&::-webkit-input-placeholder { @content };
+		&::-moz-placeholder { @content };
+		&:-ms-input-placeholder { @content };
+	}
+
+
+	// -------------------------------------------------------------------------------------- //
+	// ------------------------------- ANIMATION RELATED MIXINS ----------------------------- //
+	// -------------------------------------------------------------------------------------- //
+
+
+
+	// accelerate all the hardware for smoothers css transtions and transforms
+	@mixin hardwareAccelerate {
+		-webkit-transform: translate3d(0,0,0);
+		-webkit-perspective: 1000;
+		-webkit-backface-visibility: hidden;
+
+		-moz-transform: translate3d(0,0,0);
+		-moz-perspective: 1000;
+		-moz-backface-visibility: hidden;
+
+		-ms-transform: translate3d(0,0,0);
+		-ms-perspective: 1000;
+		-ms-backface-visibility: hidden;
+
+		transform: translate3d(0,0,0);
+		perspective: 1000;
+		backface-visibility: hidden;
+	}
+
+
+	// ------------------------------------------------------------------------------ //
+	// --------------------------- Animation Easing Types --------------------------- //
+	// ------------------------------------------------------------------------------ //
+
+	$easeIn: cubic-bezier(0.825, 0.000, 1.000, 0.640);
+	$easeInOut: cubic-bezier(0.665, 0.000, 0.430, 1);
+	$easeOut: cubic-bezier(0.200, 0.470, 0.435, 0.970);
+	$linear: cubic-bezier(0.250, 0.250, 0.750, 0.750);
+
+	// usage:
+	// e.g. @include transition(.6s $easeInOut all);
+
+
+
+	// ------------------------------------------------------------------------------ //
+	// --------------------------- Aspect Ratio ------------------------------------- //
+	// ------------------------------------------------------------------------------ //
+
+	@mixin ratio($ratio: 1 1) {
+
+		@if length($ratio) < 2 or length($ratio) > 2 {
+			@warn "$ratio must be a list with two values.";
+		}
+
+		$height: (nth($ratio, 2) / nth($ratio, 1)) * 100%;
+
+		padding-bottom: $height;
+
+	}
+	@mixin aspect-ratio($arglist... /*$width/$ratio, $height*/){
+		$map : keywords($arglist);
+		$height: map-get($map, height) or nth-or-null($arglist, 2);
+		$width:  map-get($map, width)  or nth-or-null($arglist, 1);
+		$ratio:  map-get($map, ratio)  or if($width and $height, $width/$height, nth-or-null($arglist, 1)) or 1;
+		$padding: 1/$ratio * 100%;
+		&:before { content: ''; display:block; padding-bottom: $padding; }
+		&:after  { content: ''; display:table; }
+	}

@@ -1,0 +1,163 @@
+// px to rem for font-sizes and line-height
+@mixin font-size($sizeValue: 1.6, $line: $sizeValue * 1.25) {
+	font-size: ($sizeValue * 1) + px;
+	line-height: ($line * 1) + px;
+	font-size: ($sizeValue / 10) + rem;
+	line-height: ($line / 10) + rem;
+}
+// usage: @include font-size(13);
+/*-----------------------------------------------------------------------------
+--------------------------------1--------TYPOGRAPHY----------------------------
+-------------------------------------------------------------------------------*/
+
+html {
+
+	font-size: 62.5%;
+	line-height: 62.5%;
+
+}
+
+
+body, li, p {
+
+	font-family: $primary-font;
+	@include font-size($base-font-size);
+	color: $primary-color;
+	font-weight: normal;
+	-webkit-font-smoothing: antialiased;
+
+}
+
+
+/* Paragraph sizes */
+
+p {
+	margin: 0 0 10px;
+	padding: 10px 0 0;
+	color: $primary-color;
+	font-family: $primary-font;
+	@include font-size($p-size);
+}
+
+a,
+a:active {
+
+	color: $primary-color;
+	text-decoration: none;
+
+}
+
+a:hover {
+
+	color: $primary-color;
+	text-decoration: underline;
+
+}
+
+strong,
+b {
+	font-weight: bold;
+}
+
+small,
+.small {
+	@include font-size($micro-size);
+	display: inline-block;
+}
+
+
+/*-----------------------------------------------------------------------------
+--------------------------------2--------HEADINGS------------------------------
+-------------------------------------------------------------------------------*/
+
+%headings {
+	margin-bottom: 10px;
+	color: $primary-color;
+	font-family: $primary-font;
+	font-weight: normal;
+}
+
+// Standard Headings
+h1,
+.h_alpha {
+	@extend %headings;
+	@include font-size($alpha-size);
+	text-transform: uppercase;
+	color: $secondary-color;
+
+}
+
+h2,
+.h_beta {
+	@extend %headings;
+	@include font-size($alpha-size);
+	text-transform: uppercase;
+	color: $primary-color;
+	font-family: $primary-font;
+	line-height: 2.25rem;
+	margin: 0 0 30px 0;
+
+
+}
+
+h3,
+.h_gamma {
+	// @extend %headings;
+	@include font-size($gamma-size);
+    margin: 0;
+    text-transform: uppercase;
+	font-family: $primary-font;
+    color: $quinary-color;
+    line-height: 5.25rem;
+    font-weight: 400;
+}
+
+h4,
+.h_giga {
+	// @extend %headings;
+	@include font-size($giga-size);
+    margin: 0;
+    text-transform: uppercase;
+	font-family: $primary-font;
+    color: $quinary-color;
+    line-height: 5.25rem;
+    font-weight: 400;
+}
+
+
+
+// Mega Headlines
+.h_giga { @include font-size($giga-size); }
+
+.h_mega { @include font-size($mega-size); }
+
+.h_kilo {
+
+	@include font-size($kilo-size);
+	color: $white;
+
+}
+
+// Micro Headlines
+
+.h_milli { @include font-size($milli-size); }
+.h_micro { @include font-size($micro-size); }
+
+
+
+// Generic Font size classes
+
+.font--xxs { @include font-size($base-font-size - 6); }
+.font--xs  { @include font-size($base-font-size - 4); }
+.font--s   { @include font-size($base-font-size - 2); }
+.font--m   { @include font-size($base-font-size); }
+.font--l   { @include font-size($base-font-size + 5); }
+.font--xl  { @include font-size($base-font-size + 10); }
+.font--xxl { @include font-size($base-font-size + 15); }
+
+.type--upper {text-transform: uppercase;}
+.type--lower {text-transform: lowercase;}
+
+
+.primary-text-color, .primary-text-color p { color: $primary-color; };
+.secondary-text-color, .secondary-text-color p { color: $secondary-color; };

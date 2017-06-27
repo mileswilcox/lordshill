@@ -1,0 +1,14 @@
+
+.m-social {
+
+	&__wrap {
+
+		text-align: right;
+
+		color: $secondary-color;
+
+		@include mq($max, 900px) {
+			text-align: left;
+		}
+	}
+}

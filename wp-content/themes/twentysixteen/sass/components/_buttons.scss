@@ -1,0 +1,40 @@
+.c-btn {
+
+    &:focus { outline:0; }
+
+    &:hover {
+
+    }
+
+    &--primary {
+
+        color: $primaryColor;
+        border-color: $primaryColor;
+
+        &:hover { background-color: $primaryColor; }
+
+    }
+
+    &--secondary {
+
+        color: $secondaryColor;
+        border-color: $secondaryColor;
+
+        &:hover {
+            background-color: $primaryColor;
+            color: $secondaryColor;
+        }
+
+    }
+
+    &--tertiary {
+
+        color: $tertiaryColor;
+        border-color: $tertiaryColor;
+
+        &:hover { background-color: $tertiaryColor; }
+
+
+    }
+
+}

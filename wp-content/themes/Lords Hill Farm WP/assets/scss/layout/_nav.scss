@@ -1,0 +1,178 @@
+.l-nav {
+
+    position: relative;
+    width: 100%;
+
+    &__list {  }
+
+    &__item {
+
+        float: left;
+        margin-left: 15px;
+
+    }
+
+    &__link {
+
+        padding: 4px;
+        color: #fff;
+        font-family: $primary-font;
+        letter-spacing: 0.5px;
+        text-decoration: none;
+        text-transform: uppercase;
+		text-shadow: 2px 2px $tertiary-color;
+
+        &:hover {
+            color: #fff;
+        }
+
+        &.active {
+            text-decoration: underline;
+        }
+
+    }
+
+    &__mobile {
+
+        position: fixed;
+        top: 15px;
+        right: 14px;
+        z-index: 9;
+        display: none;
+        width: 50px;
+        // height: 50px;
+        cursor: pointer;
+
+        @include mq($max, 900px) { display: block; }
+
+        span {
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 35px;
+            height: 4px;
+
+            background: $secondary-color;
+
+            @include transform(translate(-50%, 50%));
+            @include transition(background 300ms);
+
+            &:before,
+            &:after {
+
+                position: absolute;
+                right: 0;
+                left: 0;
+
+                width: 35px;
+                height: 4px;
+
+				background: $secondary-color;
+
+                content: "";
+                @include transition(all 500ms);
+
+            }
+
+            &:after { top: -8px; }
+
+            &:before { top: 8px; }
+        }
+
+        &.active {
+
+            span {
+
+                background: transparent;
+
+                &:before {
+
+                    top: 0;
+                    @include transform(rotate(-45deg));
+
+                }
+
+                &:after {
+
+                    top: 0;
+                    @include transform(rotate(45deg));
+
+                }
+
+            }
+
+        }
+
+    }
+
+    @include mq($max, 900px) {
+
+        position: fixed;
+        top: 40px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        padding: 0 6px;
+
+        background: $tertiary-color;
+
+        text-align: center;
+
+        pointer-events: none;
+        opacity: 0;
+
+        &__list { float: none; }
+
+        &__item {
+
+            display: block;
+            float: none;
+            width: 100%;
+            height: calc((100vh - 80px) / 7);
+
+            margin: 0;
+
+            line-height: calc((100vh - 80px) / 7);
+
+            @include transform(translateX(-100%));
+            @include transition(transform 0ms ease 0ms);
+
+            a { @include font-size($centi-size); }
+
+        }
+
+        &.active {
+
+            opacity: 1;
+            pointer-events: all;
+
+            li {
+
+                @include transform(translateX(0%));
+                @include transition(transform 500ms ease 0ms);
+
+                @for $i from 1 through 7 {
+                    &:nth-child(#{$i}) {
+
+                        $delay: 0;
+
+                        @if($i == 0) {
+                            $delay: 0;
+                        } else {
+                            $delay: (50 * ($i * 3)) - 50;
+                        }
+
+                        transition-delay: #{$delay}ms;
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}

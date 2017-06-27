@@ -1,0 +1,8 @@
+.C-logo {
+	&--header {
+	    @include mq($tab) {
+			display: block;
+			text-align: left;
+        }
+	}
+}

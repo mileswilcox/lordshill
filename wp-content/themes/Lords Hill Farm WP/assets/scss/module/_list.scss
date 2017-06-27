@@ -1,0 +1,25 @@
+.banner ul {
+    list-style: none;
+    line-height: 1em;
+    font-size: 3vw;
+}
+
+.banner li {
+    margin: 10px;
+    color: #000;
+}
+
+.banner ul li:before {
+    position: absolute;
+    left: 20px;
+    content: "";
+    line-height: .5em;
+    width: .5em;
+    height: .5em;
+    background-color: $tertiary-color;
+    float: left;
+    margin: .5em;
+    border-radius: 50%;
+}
+
+ul { -webkit-padding-start: 40px; }

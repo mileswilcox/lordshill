@@ -1,0 +1,98 @@
+
+.hero {
+
+	color: $secondary-color;
+	padding: 0 20px;
+
+	&__bg {
+		position: relative;
+	    min-height:100vh;
+	    -webkit-background-size: cover;
+	    -moz-background-size: cover;
+	    -o-background-size: cover;
+	    background-size: cover;
+	    background-position: bottom center;
+
+		&::after {
+			position: absolute;
+			bottom: 0;
+			display: inline-block;
+			width: 100%;
+			height: 100px;
+			background: url(../../assets/img/hero-overlay.png);
+			content: '';
+		}
+
+		&--inside-page {
+			min-height: 500px;
+		}
+
+	}
+
+	&__wrap {
+		position: relative;
+    	top: 50vh;
+
+		&--inside-page {
+			top: 40vh;
+		}
+	}
+
+	&__heading{
+
+		margin: 0;
+		text-shadow: 2px 2px $tertiary-color;
+;
+
+        @include mq($max, 500px) {
+            display: block;
+            @include font-size($gamma-size);
+        }
+
+	}
+
+	&__sub-heading{
+
+		margin: 0;
+		@include font-size($beta-size);
+
+
+		@include mq($max, 960px) {
+			display: block;
+			@include font-size($centi-size);
+		}
+
+
+		@include mq($max, 600px) {
+			display: block;
+			@include font-size($kilo-size);
+		}
+
+	}
+
+
+}
+
+
+.parallax {
+
+	position: relative;
+
+	// background: url("../../assets/img/bg-2.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-attachment: fixed;
+
+	&__img {
+
+		min-height: 400px;
+
+		&--1 { background: url("../../assets/img/bg-index.jpg"); }
+
+	}
+
+}

@@ -1,0 +1,154 @@
+/*-----------------------------------------------------------------------------
+----------------------------0--------$VARIABLES--------------------------------
+-------------------------------------------------------------------------------*/
+
+
+ //* Debug mode will visually highlight any potential markup/accessibility quirks
+ //* in the browser. Set to `true` or `false`.
+
+ $template:          true;
+ $debug-mode:        false;
+
+
+ //* Do you want all elements to adopt `box-sizing:border-box;` as per
+ //* paulirish.com/2012/box-sizing-border-box-ftw ?
+
+ $global-border-box: true;
+
+
+
+//* Font rendering and optimisation
+
+$global-font-opt: true;
+
+// =============================================================
+// ====================== Site Source Paths ====================
+// =============================================================
+
+$imgsrc: "../img";
+// eg. use #{$imgsrc}/blah/blah.jpg
+
+$fontsrc: "../fonts";
+
+
+
+// =============================================================
+// ===================== Typography ============================
+// =============================================================
+
+
+//------------------------------------//
+//    $BASE
+//------------------------------------//
+
+
+// Base stuff - in px --> to be converted to rems
+$base-font-size:	16 	!default;
+
+$base-line-height:	$base-font-size * 1.25 !default;
+
+// Base font-family.
+$base-font-family:  	sans-serif!default;
+
+
+// Default colour for objects’ borders etc.
+$base-ui-color:     	#333 !default;
+
+
+// Headings
+$alpha-size:		43	!default;
+$beta-size:			30	!default;
+$gamma-size:		28	!default;
+$delta-size:		22	!default;
+$epsilon-size:		16	!default;
+$zeta-size:			14	!default;
+
+
+$giga-size:			150	!default;
+$mega-size:			120	!default;
+$kilo-size:			90	!default;
+$hecto-size:		70	!default;
+
+
+$centi-size:		13 	!default;
+$milli-size: 		12 	!default;
+$micro-size: 		10 	!default;
+
+$p-size:            $base-font-size !default;
+
+
+//------------------------------------//
+//    $Fonts
+//------------------------------------//
+
+$primaryFont: "raleway",sans-serif;
+$secondaryFont: "fatfrank",sans-serif;
+$tertiaryFont: "akagi-pro",sans-serif;
+
+
+$fonticon: 'jireh-tek';
+
+
+$baseFont: normal #{$base-font-size}px / #{$base-line-height}px $primaryFont;
+
+
+$base-spacing-unit: $base-line-height!default;
+$half-spacing-unit: $base-spacing-unit / 2!default;
+$line-height-ratio: $base-line-height / $base-font-size;
+
+
+// Weights
+$reg: 400;
+$bold: 600;
+$light: 300;
+$e-light: 200;
+$Fat-Italic: 900; //italic fat italic akagi-pro
+
+
+// =============================================================
+// ======================= Colour Vars =========================
+// =============================================================
+
+
+$black:		#000;
+$white:		#fff;
+$grey:		#d7d7d7;
+$l-grey:	#e9e9e9;
+$l-black:   #323232;
+$green:	    #2ea16b;
+
+$primaryColor: 		$black;
+$secondaryColor: 	$white;
+$tertiaryColor: 	$green;
+$quaternaryColor: 	$grey;
+$quinaryColor: 		$l-grey;
+$senaryColor:       $l-black;
+
+$error: 	#B42C2C; // error red colour
+$success: 	#090; // success green colour
+$info: 		#3399ff; // info blue colour
+$notice: 	#EC921F; // alert orange colour
+
+$bg:	$white;
+
+
+// =============================================================
+// =============== Base Media Query Breakpoints ================
+// =============================================================
+
+$mob-sml: 320px !default;
+$mob-x-sml: 400px !default;
+$mob: 480px !default;
+$mob-med: 600px !default;
+$mob-lrg: 640px !default;
+
+
+$tab-sml: 765px !default;
+$tab: 768px !default;
+$tab-lrg: 820px !default;
+$tab-x-lrg: 900px !default;
+
+$desk-sml: 920px !default;
+$desk: 960px !default;
+$desk-lrg: 1280px !default;
+$desk-x-lrg: 1440px !default;

@@ -1,0 +1,85 @@
+/*-----------------------------------------------------------------------------
+--------------------------------6--------$LAYOUT--------------------------------
+-------------------------------------------------------------------------------*/
+
+/* Utilising the SMACSS " .l- " prefix for layout elements */
+
+.l-head {
+
+}
+
+.l-main {
+
+}
+
+.l-foot {
+
+}
+
+.header {
+
+}
+
+
+main {
+
+	position: relative;
+	z-index: 2;
+	margin-bottom: 384px;
+	background: $bg;
+	min-height: 100vh;
+
+	@include mq($desk-lrg) {
+
+		position: static;
+		margin-bottom: auto;
+
+	}
+
+}
+
+
+footer {
+
+}
+
+.banner--content-wrap {
+
+	ul {
+
+		list-style: none;
+		line-height: 1em;
+		font-size: 3vw;
+
+	}
+
+	li {
+		margin: 10px;
+	}
+
+	ul li:before {
+    	position: absolute;
+    	left: 20px;
+		content: "";
+		line-height: .5em;
+		width: .5em;
+		height: .5em;
+		background-color: $tertiaryColor;
+		float: left;
+   		margin: .5em;
+    	border-radius: 50%;
+
+	}
+
+}
+
+.content {
+
+	&--list-item:hover {
+
+		text-decoration: none;
+		cursor: pointer;
+
+	}
+
+}

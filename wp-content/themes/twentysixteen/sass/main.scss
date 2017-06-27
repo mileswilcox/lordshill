@@ -1,0 +1,63 @@
+
+/*============================
+*	Base
+	all base files to reset and get the site started
+*/
+
+@import "base/variables";
+@import "base/mixins";
+@import "base/base";
+@import "base/typography";
+@import "base/fonticon";
+
+
+
+/*============================
+*	Layout
+	Main layout elements of site - Header, Navigation, sidebar footer etc but none of the reusable
+	elements that are inside of these including headers, links etc.
+*/
+
+@import "layout/header";
+@import "layout/nav";
+@import "layout/footer";
+@import "layout/grid";
+
+
+
+/*============================
+*	Components
+    this will be the core styles for the unique componotes on a site. this should be things like buttons, logo, burger icons.
+*/
+@import "components/buttons";
+@import "components/burger";
+@import "components/logo";
+
+
+/*============================
+*	Modules
+	this will be the core styles for the site. this should be as modular as possible
+	but no state styles. These are for the next section.
+*/
+
+@import "modules/styleguide";
+@import "modules/flickity.min";
+@import "modules/hero";
+@import "modules/form";
+@import "modules/card";
+@import "modules/menu";
+
+
+/*============================
+* Utilities
+*/
+
+@import "utils/utils";
+
+
+ /*============================
+*	Libraries
+	CSS files for any external libraries like magnific etc.
+*/
+
+//@import "lib/fancybox";

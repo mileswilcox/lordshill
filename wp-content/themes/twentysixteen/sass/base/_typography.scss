@@ -1,0 +1,165 @@
+
+// important to define 62.5% for [rem] font conversion
+
+html {
+	font-size: 62.5%;
+	line-height: 62.5%;
+}
+
+
+body {
+	font-family:$primaryFont;
+	@include font-size($p-size, 24);
+	color:$primaryColor;
+	font-weight:normal;
+	text-align:left;
+}
+
+
+/* Paragraph sizes */
+
+p {
+	margin: 0 0 10px;
+	color: $primaryColor;
+	font-family: $primaryFont;
+	@include font-size($p-size, 24);
+}
+
+li {
+	font-family: $primaryFont;
+	@include font-size($p-size);
+}
+
+
+a,
+a:active {
+	text-decoration: none;
+	color: $primaryColor;
+}
+
+a:hover {
+	text-decoration: none;
+	color: $primaryColor;
+}
+
+
+/*-----------------------------------------------------------------------------
+-------------------------------HEADINGS----------------------------------------
+-------------------------------------------------------------------------------*/
+
+//t-color font colors
+.t-color {
+
+	@each $name, $variable in $colours {
+
+		&-#{$name} {
+			color: $variable;
+		}
+
+	}
+
+	@each $name, $variable in $colours {
+
+		&--#{$name} {
+
+			&:after {
+				background: $variable;
+			}
+		}
+
+	}
+
+// Standard Headings
+
+.t-heading {
+
+	font-family: $primaryFont;
+
+	&-alpha {
+
+		@include font-size($alpha-size, 106); // Allows line height second value //
+		text-transform: uppercase;
+	}
+
+	&-gamma { @include font-size($gamma-size); }
+
+	}
+
+}
+
+// Mega Headlines
+.t-heading-giga { @include font-size($giga-size); }
+.t-heading-mega { @include font-size($mega-size); }
+.t-heading-kilo { @include font-size($kilo-size); }
+.t-heading-hecto { @include font-size($hecto-size); }
+
+
+// Micro Headlines
+
+.t-heading-milli { @include font-size($milli-size); }
+.t-heading-micro { @include font-size($micro-size); }
+
+
+/*-----------------------------------------------------------------------------
+-------------------------------FONT SIZES--------------------------------------
+-------------------------------------------------------------------------------*/
+
+$primaryFontSizesMax: 	14;
+$secondaryFontSizesMax: 28;
+$tertiaryFontSizesMax: 	105;
+
+.f-size {
+
+	// Set the smallest set of font sizes - e.g. .f--size--10
+	@for $smallest from 10 to $primaryFontSizesMax + 1 {
+		&--#{$smallest}{
+			@include font-size($smallest);
+		}
+	}
+
+
+	// Set the middle set of font sizes - e.g. .f--size--16
+	@for $medium from 16 to $secondaryFontSizesMax + 2 {
+		&--#{$medium}{
+			@include font-size($medium);
+		}
+	}
+
+
+	// Set the largest set of font sizes - e.g. .f--size--30
+	@for $largest from 30 to $tertiaryFontSizesMax + 5 {
+		&--#{$largest}{
+			@include font-size($largest);
+		}
+	}
+
+}
+
+
+
+/*-----------------------------------------------------------------------------
+-------------------------------FONT COLOURS--------------------------------------
+-------------------------------------------------------------------------------*/
+
+.f-color {
+
+    // Set each colour from the colour map -  e.g. .f--color--primary--alpha
+    @each $profile, $colour in $colour_map {
+        &--#{$profile} { color: $colour }
+    }
+
+}
+
+
+/*-----------------------------------------------------------------------------
+-------------------------------FONT FAMILY--------------------------------------
+-------------------------------------------------------------------------------*/
+
+.f-family {
+
+    // Set each font-family from the font map -  e.g. .f--family--primary
+    @each $profile, $font in $font_map {
+        &--#{$profile} { font-family: $font !important }
+    }
+
+}

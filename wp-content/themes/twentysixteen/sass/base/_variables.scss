@@ -1,0 +1,177 @@
+/*-----------------------------------------------------------------------------
+----------------------------0--------$VARIABLES--------------------------------
+-------------------------------------------------------------------------------*/
+
+
+ //* Debug mode will visually highlight any potential markup/accessibility quirks
+ //* in the browser. Set to `true` or `false`.
+
+ $template:          true;
+ $debug-mode:        false;
+
+
+ //* Do you want all elements to adopt `box-sizing:border-box;` as per
+ //* paulirish.com/2012/box-sizing-border-box-ftw ?
+
+ $global-border-box: true;
+
+//* Font rendering and optimisation
+
+$global-font-opt: true;
+
+// =============================================================
+// ====================== Site Source Paths ====================
+// =============================================================
+
+$imgsrc: "../img";
+// eg. use #{$imgsrc}/blah/blah.jpg
+
+$fontsrc: "../fonts";
+
+// =============================================================
+// ===================== Typography ============================
+// =============================================================
+
+// Base stuff - in px --> to be converted to rems
+$base-font-size:	14 	!default;
+
+$base-line-height:	$base-font-size * 1.25 !default;
+
+// Base font-family.
+$base-font-family:  	sans-serif!default;
+
+
+// Default colour for objects’ borders etc.
+$base-ui-color:     	#333 !default;
+
+
+// Headings
+$alpha-size:		62	!default;
+$beta-size:			28	!default;
+$gamma-size:		24	!default;
+$delta-size:		22	!default;
+$epsilon-size:		18	!default;
+$zeta-size:			18	!default;
+
+// Headings Large
+$giga-size:			150	!default;
+$mega-size:			120	!default;
+$kilo-size:			90	!default;
+$hecto-size:		70	!default;
+
+// Small
+$centi-size:		13 	!default;
+$milli-size: 		12 	!default;
+$micro-size: 		10 	!default;
+
+
+$p-size:            $base-font-size !default;
+
+
+//------------------------------------//
+//    $Fonts
+//------------------------------------//
+
+$primaryFont: 			"Memphis", 'Times New Roman', serif;
+$secondaryFont: 		"Veneer", Arial, sans-serif;
+$tertiaryFont:			"ThirstyRough", Arial, sans-serif;
+$quaternaryFont:	 	"Brothers", Arial, sans-serif;
+$quinaryFont:			"BudmoJiggler", Arial, sans-serif;
+
+$font_map: (
+
+	primary: 			$primaryFont,
+	secondary:			$secondaryFont,
+	tertiary:			$tertiaryFont,
+	quaternary:			$quaternaryFont,
+	quinary:			$quinaryFont
+
+);
+
+
+$fonticon: 'customicon';
+
+
+$baseFont: normal #{$base-font-size}px / #{$base-line-height}px $primaryFont;
+
+
+$base-spacing-unit: $base-line-height!default;
+$half-spacing-unit: $base-spacing-unit / 2!default;
+$line-height-ratio: $base-line-height / $base-font-size;
+
+
+// Weights
+$reg: 400;
+$bold: 600;
+
+
+
+// =============================================================
+// ======================= Colour Vars =========================
+// =============================================================
+
+
+$black:		#000;
+$white:		#fff;
+$grey:		#ccc;
+
+$cream:			#fffef0;
+$light-red:		#e0727d;
+$light-green:	#22cc90;
+$light-blue:	#32b2d9;
+$blue:			#448a9f;
+$orange:		#ff7e20;
+
+$primaryColor: 		$black;
+$secondaryColor: 	$white;
+$tertiaryColor: 	$cream;
+$quaternaryColor: 	$light-red;
+$quinaryColor: 		$light-green;
+$senaryColor: 		$light-blue;
+$septenaryColor: 	$blue;
+$octonaryColor: 	$orange;
+
+$error: 	#B42C2C; // error red colour
+$success: 	#090; // success green colour
+$info: 		#3399ff; // info blue colour
+$notice: 	#EC921F; // alert orange colour
+
+$bg:	$cream;
+
+
+//------------------------------------//
+// Colours
+//------------------------------------//
+
+$colours: (
+	primary: $primaryColor,
+	secondary: $secondaryColor,
+	tertiary: $tertiaryColor,
+	quaternary: $quaternaryColor,
+	quinary: $quinaryColor,
+	senary: $senaryColor,
+	septenary: $septenaryColor,
+	octonary: $octonaryColor
+);
+
+
+// =============================================================
+// =============== Base Media Query Breakpoints ================
+// =============================================================
+
+$mob-sml: 320px !default;
+$mob-x-sml: 400px !default;
+$mob: 480px !default;
+$mob-med: 600px !default;
+$mob-lrg: 640px !default;
+
+
+$tab-sml: 765px !default;
+$tab: 768px !default;
+$tab-lrg: 820px !default;
+$tab-x-lrg: 900px !default;
+
+$desk-sml: 920px !default;
+$desk: 960px !default;
+$desk-lrg: 1280px !default;
+$desk-x-lrg: 1440px !default;

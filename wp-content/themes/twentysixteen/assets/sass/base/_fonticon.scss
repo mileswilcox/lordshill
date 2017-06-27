@@ -1,0 +1,70 @@
+/*-----------------------------------------------------------------------------
+----------------------------4--------$FONTICON---------------------------------
+-------------------------------------------------------------------------------*/
+
+/* See https://app.fontastic.me/accounts/login/ - U: frontend@propcom.co.uk - P: propcomm */
+
+@charset "UTF-8";
+
+@font-face {
+  font-family: "jireh-tek";
+  src:url("assets/fonts/jireh-tek.eot");
+  src:url("assets/fonts/jireh-tek.eot?#iefix") format("embedded-opentype"),
+    url("assets/fonts/jireh-tek.woff") format("woff"),
+    url("assets/fonts/jireh-tek.ttf") format("truetype"),
+    url("assets/fonts/jireh-tek.svg#jireh-tek") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "jireh-tek" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "jireh-tek" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-phone:before {
+  content: "\61";
+}
+.icon-envelope:before {
+  content: "\62";
+}
+.icon-linkedin:before {
+  content: "\63";
+}
+.icon-facebook:before {
+  content: "\64";
+}
+.icon-instagram:before {
+  content: "\65";
+}
+.icon-twitter:before {
+  content: "\66";
+}
+.icon-left-open-big:before {
+  content: "\67";
+}
+.icon-right-open-big:before {
+  content: "\68";
+}

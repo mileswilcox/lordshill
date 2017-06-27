@@ -1,0 +1,13 @@
+
+.c-arrow:after {
+	position: absolute;
+    top: -32px;
+	left: 50%;
+	@include transform(translateX(-50%));
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 34px 32px 34px;
+	border-color: transparent transparent $secondaryColor transparent;
+	content: " ";
+}

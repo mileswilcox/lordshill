@@ -1,0 +1,40 @@
+
+.center{
+    text-align: center;
+    position: relative;
+    top: 42.5%;
+    transform: translate3d(0, -50%, 0);
+}
+
+.text-right {
+    text-align: right;
+    @include mq($max, 460px) {
+        text-align: center;
+    }
+}
+
+.text-left {
+    text-align: left;
+    @include mq($max, 460px) {
+        text-align: center;
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.image-gallery {
+    padding: 20px 0;
+}
+
+.sections {
+    padding: 50px 0;
+}
+
+.img-absolute {
+    width: 100%;
+    position: absolute;
+    margin-top: -360px;
+    height: 560px;
+}

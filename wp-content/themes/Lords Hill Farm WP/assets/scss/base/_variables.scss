@@ -1,0 +1,110 @@
+
+ //* Debug mode will visually highlight any potential markup/accessibility quirks
+ //* in the browser. Set to `true` or `false`.
+
+$debug-mode:        false;
+
+
+ //* Do you want all elements to adopt `box-sizing:border-box;` as per
+ //* paulirish.com/2012/box-sizing-border-box-ftw ?
+
+$global-border-box: true;
+
+
+
+
+
+// =============================================================
+// ===================== Typography ============================
+// =============================================================
+
+
+//------------------------------------//
+//    $BASE
+//------------------------------------//
+
+
+// Base stuff - in px --> to be converted to rems
+$base-font-size:	16 	!default;
+
+$base-line-height:	$base-font-size * 1 !default;
+
+// Base font-family.
+$base-font-family:  	sans-serif!default;
+
+
+// Default colour for objects’ borders etc.
+$base-ui-color:     	#333 !default;
+
+
+// Headings
+$alpha-size:		60	!default; // .h_alpha
+$beta-size:			34	!default; // .h_beta
+$gamma-size:		24	!default; // .h_gamma
+$giga-size:			20	!default; // .h_giga
+$mega-size:			18	!default; // .h_mega
+$kilo-size:			16	!default; // .h_kilo
+$centi-size:		14 	!default;
+$milli-size: 		12 	!default;
+$micro-size: 		10 	!default;
+
+$p-size:            $base-font-size !default;
+
+
+//------------------------------------//
+//    $Fonts
+//------------------------------------//
+
+$primary-font: 'Montserrat', Helvetica, Arial, sans-serif;
+// $primary-font: 'PT Sans', sans-serif;
+// $tertiary-font: 'montserratlight', Helvetica, Arial, sans-serif;
+
+$fonticon: 'customicon';
+
+
+$baseFont: normal #{$base-font-size}px / #{$base-line-height}px $primary-font;
+
+
+$base-spacing-unit: $base-line-height!default;
+$half-spacing-unit: $base-spacing-unit / 2!default;
+$line-height-ratio: $base-line-height / $base-font-size;
+
+
+// Weights
+$reg: 400;
+$bold: 700;
+
+
+// =============================================================
+// ======================= Colour Vars =========================
+// =============================================================
+
+$black:		#000000;
+$white:		#ffffff;
+$green:		#5b6869;
+$blue:		#474ba3;
+$grey:		#c1c1c1;
+$off-white:	#f6f4fa;
+
+
+$primary-color: 		$black; // black
+$secondary-color: 		$white; // white
+$tertiary-color: 		$green; // green
+$quaternary-color: 		$blue; // blue
+$quinary-color: 		$grey; // grey
+$senary-color: 			$off-white; // off-white
+
+
+$error: 	#B42C2C; // error red colour
+$success: 	#090; // success green colour
+$info: 		#3399ff; // info blue colour
+$notice: 	#EC921F; // alert orange colour
+$urgency: 	#8f262b; // shop now
+
+
+$primaryLinkColor: #{$primary-color};
+$primaryLinkHoverColor: #{$secondary-color};
+
+// =============================================================
+// =============== Base Media Query Breakpoints ================
+// =============================================================

@@ -1,0 +1,30 @@
+.l-head {
+	z-index: 10;
+	padding: 20px 0;
+	position: absolute;
+	left: 0;
+	right: 0;
+
+	&__social {
+		position: absolute;
+		right: 20px;
+		float: right;
+
+		&__icon {
+			float: left;
+			margin-left: 10px;
+
+			.icon--alt {
+				color: $primaryColor;
+			}
+
+		}
+
+		@include mq($tab) {
+			position: static;
+		    display: inline-block;
+  			float: none;
+		}
+
+	}
+}

@@ -1,0 +1,72 @@
+/* #Clearing
+================================================== */
+
+/* Self Clearing Goodness */
+.container:after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
+
+/* Use clearfix class on parent to clear nested columns,
+or wrap each row of columns in a <div class="row"> */
+
+.clearfix {
+	@include clearfix;
+}
+/* You can also use a <br class="clear" /> to clear columns */
+.clear {
+	clear: both;
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+
+
+/* #Images
+================================================== */
+
+img.scale-with-grid {
+	max-width: 100%;
+	width:100%;
+	height: auto;
+}
+
+
+/* #Site wide Box-Sizing
+================================================== */
+
+
+@if $global-border-box == true{
+	/**
+	* Let’s make the box model all nice, shall we...?
+	*/
+	* {
+		&,
+		&:before,
+		&:after{
+			@include box-sizing(border-box);
+		}
+	}
+}
+
+/* #Global Font Optimisation
+================================================== */
+
+
+@if $global-font-opt == true{
+    /**
+    * Let’s make those fonts render nicely in good browsers...?
+    */
+	* {
+		&,
+		&:before,
+		&:after {
+			-moz-osx-font-smoothing: grayscale;
+			-webkit-font-smoothing: antialiased;
+			font-smoothing: antialiased;
+			text-rendering: optimizeLegibility;
+		}
+	}
+}
+
+@import "template";

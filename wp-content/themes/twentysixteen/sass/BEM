@@ -1,0 +1,13 @@
+BEM
+
+.block              represents the higher level of an abstraction or component.
+.block__element     represents a descendent of .block that helps form .block as a whole.
+.block--modifier    represents a different state or version of .block.
+
+https://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
+
+eg .
+
+.site-search {} /* Block */
+.site-search__field {} /* Element */
+.site-search--full {} /* Modifier */
